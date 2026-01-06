@@ -100,12 +100,12 @@ export function WalletConnectButton() {
         >
           {/* Christmas Cap Overlay - Using standard Santa Hat Emoji positioned as a cap */}
           <div className="relative">
-            <span className="absolute -top-[14px] -left-[6px] text-[20px] z-20 pointer-events-none -rotate-[15deg] drop-shadow-sm"
+            {/* <span className="absolute -top-[14px] -left-[6px] text-[20px] z-20 pointer-events-none -rotate-[15deg] drop-shadow-sm"
                 role="img" 
                 aria-label="Christmas Cap"
             >
                 ❄️
-            </span>
+            </span> */}
             <Avatar className="h-7 w-7 border border-background shadow-sm">
               <AvatarImage src={avatarUrl || ""} className="object-cover" />
               <AvatarFallback className="bg-primary/10 text-primary text-[10px]">

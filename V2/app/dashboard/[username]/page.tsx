@@ -24,43 +24,43 @@ import { ProfileSettingsModal } from "@/components/profile-setting"
 import { MyCreationsModal } from "@/components/my-creations-modal" 
 import { CreateNewModal } from "@/components/create-new-modal" 
 
-// --- Christmas Bubble Animation Component ---
-const ChristmasBackground = () => {
-    const bubbles = useMemo(() => [...Array(15)].map((_, i) => ({
-        id: i,
-        size: Math.random() * 20 + 10,
-        left: Math.random() * 100,
-        delay: Math.random() * 5,
-        duration: Math.random() * 10 + 10,
-        emoji: ['🔴', '🟢', '❄️', '✨', '🎁', '🔔'][i % 6]
-    })), []);
+// // --- Christmas Bubble Animation Component ---
+// const ChristmasBackground = () => {
+//     const bubbles = useMemo(() => [...Array(15)].map((_, i) => ({
+//         id: i,
+//         size: Math.random() * 20 + 10,
+//         left: Math.random() * 100,
+//         delay: Math.random() * 5,
+//         duration: Math.random() * 10 + 10,
+//         emoji: ['🔴', '🟢', '❄️', '✨', '🎁', '🔔'][i % 6]
+//     })), []);
 
-    return (
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-            {bubbles.map((b) => (
-                <motion.div
-                    key={b.id}
-                    initial={{ y: -50, x: `${b.left}%`, opacity: 0 }}
-                    animate={{ 
-                        y: "110vh", 
-                        opacity: [0, 1, 1, 0],
-                        x: [`${b.left}%`, `${b.left + (Math.sin(b.id) * 5)}%`, `${b.left}%`]
-                    }}
-                    transition={{ 
-                        duration: b.duration, 
-                        repeat: Infinity, 
-                        ease: "linear",
-                        delay: b.delay 
-                    }}
-                    className="absolute select-none"
-                    style={{ fontSize: b.size }}
-                >
-                    {b.emoji}
-                </motion.div>
-            ))}
-        </div>
-    );
-};
+//     return (
+//         <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+//             {bubbles.map((b) => (
+//                 <motion.div
+//                     key={b.id}
+//                     initial={{ y: -50, x: `${b.left}%`, opacity: 0 }}
+//                     animate={{ 
+//                         y: "110vh", 
+//                         opacity: [0, 1, 1, 0],
+//                         x: [`${b.left}%`, `${b.left + (Math.sin(b.id) * 5)}%`, `${b.left}%`]
+//                     }}
+//                     transition={{ 
+//                         duration: b.duration, 
+//                         repeat: Infinity, 
+//                         ease: "linear",
+//                         delay: b.delay 
+//                     }}
+//                     className="absolute select-none"
+//                     style={{ fontSize: b.size }}
+//                 >
+//                     {b.emoji}
+//                 </motion.div>
+//             ))}
+//         </div>
+//     );
+// };
 
 // --- Custom Icons ---
 const XIcon = ({ className }: { className?: string }) => (
@@ -231,7 +231,7 @@ export default function DashboardPage() {
 
     return (
         <main className="min-h-screen bg-background pb-20 relative overflow-x-hidden">
-            <ChristmasBackground />
+            {/* <ChristmasBackground /> */}
             
             <div className="container mx-auto px-4 py-8 relative z-10 max-w-7xl">
                 <Header pageTitle={isOwner ? "My Dashboard" : `${profile.username}'s Space`} />
@@ -244,9 +244,9 @@ export default function DashboardPage() {
                             {/* Christmas Cap "Under" Image Logic */}
                             <div className="relative">
                                 {/* The Cap: z-0 (behind), peeking from top-right */}
-                                <div className="absolute -top-6 -right-4 z-0 pointer-events-none rotate-[15deg] drop-shadow-md text-6xl">
+                                {/* <div className="absolute -top-6 -right-4 z-0 pointer-events-none rotate-[15deg] drop-shadow-md text-6xl">
                                     ❄️
-                                </div>
+                                </div> */}
                                 
                                 {/* Avatar: z-10 (on top) */}
                                 <Avatar className="h-24 w-24 border-4 border-background shadow-lg relative z-10">
